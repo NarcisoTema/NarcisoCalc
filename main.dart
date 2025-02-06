@@ -98,3 +98,4 @@ final ThemeData appTheme = ThemeData(
   primaryColor: Color(0xFF003366), // Azul carregado
   secondaryHeaderColor: Color(0xFF3366FF), // Azul normal
 );
+
