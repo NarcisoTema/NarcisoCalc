@@ -1,0 +1,31 @@
+name: narciso_calc_app # Nome do seu aplicativo
+description: A calculadora simples feita em Flutter. # Descrição do app
+
+# Versão do aplicativo
+version: 1.0.0+1
+
+# Ambiente
+environment:
+  sdk: ">=2.18.0 <3.0.0" # Versão do Dart
+
+# Dependências do aplicativo
+dependencies:
+  flutter:
+    sdk: flutter # Depende do SDK Flutter
+  math_expressions: ^2.0.0 # Adicionando uma dependência para avaliar expressões matemáticas
+  # Aqui você pode adicionar outras dependências necessárias para seu app
+
+# Dependências para o desenvolvimento (Testes, ferramentas, etc.)
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# Assets (se você usar imagens ou fontes)
+flutter:
+  assets:
+    - assets/images/ # Pasta de imagens (se tiver)
+    - assets/fonts/  # Pasta de fontes (se tiver)
+
+# Outras configurações podem ser adicionadas, como:
+# - configuração de plugins
+# - definição de dependências específicas para plataformas (Android/iOS)
