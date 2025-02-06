@@ -1,35 +1,25 @@
 workflows:
-  ios:
-    name: iOS Build Workflow
-    max_build_duration: 60
-    environment:
-      flutter: stable # Versão estável do Flutter
-      xcode: latest-stable # Última versão estável do Xcode
-    scripts:
-      - flutter clean
-      - flutter pub get
-      - flutter build ios --release
-    artifacts:
-      - build/ios/iphoneos/Runner.app
-    publishing:
-      # Aqui você pode adicionar configurações para publicação no TestFlight ou App Store
-      email:
-        recipients:
-          - youremail@example.com
-
   android:
-    name: Android Build Workflow
+    name: Build APK for Android
     max_build_duration: 60
-    environment:
-      flutter: stable # Versão estável do Flutter
+    instance_type: macos
+    platform: android
     scripts:
-      - flutter clean
-      - flutter pub get
-      - flutter build apk --release # Gera o APK
+      - name: Flutter setup
+        script: |
+          # Fazendo setup para o Flutter
+          flutter channel stable
+          flutter upgrade
+          flutter pub get
+
+      - name: Build APK
+        script: |
+          flutter build apk --release --no-sound-null-safety
+
     artifacts:
-      - build/app/outputs/flutter-apk/app-release.apk # Caminho do APK gerado
-    publishing:
-      # Aqui você pode adicionar configurações para publicação na Google Play Store
-      email:
-        recipients:
-          - youremail@example.com
+      - build/app/outputs/flutter-apk/app-release.apk  # O caminho do APK gerado
+
+    environment:
+      vars:
+        # Você pode adicionar variáveis de ambiente aqui, caso necessário
+
