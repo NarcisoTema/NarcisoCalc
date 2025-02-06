@@ -7,7 +7,6 @@ workflows:
     scripts:
       - name: Flutter setup
         script: |
-          # Fazendo setup para o Flutter
           flutter channel stable
           flutter upgrade
           flutter pub get
@@ -17,9 +16,8 @@ workflows:
           flutter build apk --release --no-sound-null-safety
 
     artifacts:
-      - build/app/outputs/flutter-apk/app-release.apk  # O caminho do APK gerado
+      - build/app/outputs/flutter-apk/app-release.apk
 
     environment:
       vars:
-        # Você pode adicionar variáveis de ambiente aqui, caso necessário
-
+        # Adicione variáveis de ambiente se necessário
